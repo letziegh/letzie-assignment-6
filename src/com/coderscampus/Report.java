@@ -1,14 +1,17 @@
 package com.coderscampus;
 
 import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Report {
 	private YearMonth date;
 	
 	private Integer sales;
 	
-	public Report(YearMonth date, Integer sales) {
-		this.date = date;
+	public Report(String date, Integer sales) {
+		YearMonth dates = YearMonth.parse(date, DateTimeFormatter.ofPattern("MMM-yy", Locale.US));
+		this.date = dates;
 		this.sales = sales;
 	}
 	
