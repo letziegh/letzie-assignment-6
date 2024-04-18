@@ -33,7 +33,7 @@ public class SalesService {
 	return this.sales;
 	}
 
-	public void readFile(String fileName) throws IOException {
+	public String readFile(String fileName) throws IOException {
 		
 		BufferedReader reader = new BufferedReader(new FileReader(fileName));
 		
@@ -50,6 +50,7 @@ public class SalesService {
 			this.sales.add(report);
 			
 		}
+		return line;
 
 		
 
