@@ -34,6 +34,7 @@ public class SalesService {
 	}
 
 	public String readFile(String fileName) throws IOException {
+		this.sales.clear();
 		
 		BufferedReader reader = new BufferedReader(new FileReader(fileName));
 		
@@ -50,6 +51,7 @@ public class SalesService {
 			this.sales.add(report);
 			
 		}
+		reader.close();
 		return line;
 
 		
